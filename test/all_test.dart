@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:hashtables/binary_search.dart';
 import 'package:hashtables/linear_search.dart';
 import 'package:test/test.dart';
