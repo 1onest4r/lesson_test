@@ -12,12 +12,16 @@ this is **Bold text**
 
 italic (*italicized text*)
 
+---
+
 > blockquote once said "hi"  
 > this should be in the next line forcefully because previous line have 2 space at the end
 >
 >also it works
 
 >could be separated entirely
+
+---
 
 1. First item 
    - First item
@@ -31,8 +35,24 @@ italic (*italicized text*)
 - First item
 - Second item
 - Third item
+  
+---
 
 >as far as i tried you can have two different bullet point list.
 
 it even has inline code section
 `git clone git@github.com:1onest4r/lesson_test.git`
+
+```
+this is cool that you can have this.
+```
+
+---
+
+[you can check out the repo](https://github.com/1onest4r/lesson_test)
+
+---
+
+**More about me lul**
+
+![this is image of ](lmao.jpg)
