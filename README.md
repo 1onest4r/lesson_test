@@ -56,3 +56,17 @@ this is cool that you can have this.
 **More about me lul**
 
 ![this is image of ](lmao.jpg)
+
+| devices| compatibility |
+| --- | --- |
+| windows | yes |
+| linux | yes |
+| mac | yes |
+
+```
+{
+  "firstName": "Eric",
+  "lastName": "Erka",
+  "age": 90
+}
+```
