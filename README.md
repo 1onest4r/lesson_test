@@ -70,3 +70,7 @@ this is cool that you can have this.
   "age": 90
 }
 ```
+
+Here's a sentence with a footnote. [Eric]
+
+[Eric]: it's an clown not a human.
