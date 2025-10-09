@@ -32,7 +32,7 @@ void main() {
   students.insert(Student("TK", 2024085));
   students.insert(Student("TA", 2023096));
   students.insert(Student("UM", 2022007));
-  students.insert(Student("vG", 2024007));
+  students.insert(Student("VG", 2024007));
 
   // studentList[2024078] = Student(2024078, 'AZ1');
   // studentList[2024077] = Student(2024077, 'AZ2');
@@ -57,6 +57,6 @@ void main() {
 
   // var studentName = studentSearch(studentList, 2024008);
 
-  final studentName = students.getStudent(2024007);
+  final studentName = students.getStudent(2022007);
   print(studentName);
 }
