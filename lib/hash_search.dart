@@ -1,6 +1,4 @@
-String? studentSearch(List<Student> list, int id) {
-  pass;
-}
+String? studentSearch(List<Student?> list, int id) {}
 
 class Student {
   final String name;
