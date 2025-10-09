@@ -24,6 +24,9 @@ void main() {
   students.insert(Student("ED", 2024012));
   students.insert(Student("EB", 2024054));
   students.insert(Student("ES2", 2024111));
+
+  students.insert(Student("ES3", 2024011));
+
   students.insert(Student("NI", 2024059));
   students.insert(Student("MD", 2024025));
   students.insert(Student("MC", 2024020));
@@ -57,6 +60,6 @@ void main() {
 
   // var studentName = studentSearch(studentList, 2024008);
 
-  final studentName = students.getStudent(2022007);
+  final studentName = students.getStudent(2024111);
   print(studentName);
 }
