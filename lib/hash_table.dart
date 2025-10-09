@@ -8,6 +8,9 @@ class Student {
   final String name;
   final int id;
   Student(this.name, this.id);
+
+  @override
+  String toString() => "[$id] $name";
 }
 
 class Hashtable {
@@ -25,7 +28,4 @@ class Hashtable {
   Student? getStudent(int studentId) {
     return _bucket[_hash(studentId)];
   }
-
-  @override
-  String toString() => $id $name;
 }
