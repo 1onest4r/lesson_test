@@ -9,6 +9,9 @@ class Student {
 
   @override
   String toString() => "[$id] $name";
+
+  @override
+  int get hashCode => id % 100;
 }
 
 class Hashtable {

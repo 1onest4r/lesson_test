@@ -60,6 +60,41 @@ void main() {
 
   // var studentName = studentSearch(studentList, 2024008);
 
-  final studentName = students.getStudent(2024111);
-  print(studentName);
+  // final studentName = students.getStudent(2024111);
+  // print(studentName);
+
+  // print('cat'.hashCode);
+  // const word = 'act';
+  // const arraySize = 200;
+  // final index = word.hashCode % arraySize;
+  // print(index);
+
+  //------Key must be unique------
+  final idToNameMap = {
+    2024078: "AZ1",
+    2023002: "NM",
+    2022081: "TG",
+    2024085: "TK",
+    2023096: "TA",
+    2022007: "UM",
+    2024007: "VG",
+    //somenumber (key): somevalue (value)
+  };
+
+  final name = idToNameMap[2024007];
+  print(name);
+
+  Map<String, int> nameToIdMap = {
+    "AZ1": 2024078,
+    "NM": 2023002,
+    "TG": 2022081,
+    "TK": 2024085,
+    "TA": 2023096,
+    "UM": 2022007,
+    "VG": 2024007,
+    //somevalue (key): somenumber (value)
+  };
+
+  final id = nameToIdMap["AZ1"];
+  print(id);
 }
