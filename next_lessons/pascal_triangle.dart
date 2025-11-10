@@ -20,6 +20,6 @@ int pascalValue(int row, int col) {
 }
 
 void main() {
-  pascalTriangle(14);
+  pascalTriangle(16);
   // print(pascalValue(6, 3));
 }
