@@ -12,7 +12,7 @@ void main() {
 
   final stopWatch = Stopwatch();
   stopWatch.start();
-  final sorted = sort(myList);
+  sort(myList);
   stopWatch.stop();
 
   print("Execution time: ${stopWatch.elapsedMilliseconds} ms");
