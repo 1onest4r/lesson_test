@@ -1,38 +1,39 @@
-// void main() {
-//   final myList = [3, 7, 2, 6, 5, 1, 4, 9];
-//   final value = 10;
-//   print(linearSearch(myList, value));
-// }
-
-// int? linearSearch(List<int> list, int num) {
-//   for (int i = 0; i < list.length; i++) {
-//     if (list[i] == num) {
-//       return i;
-//     }
-//   }
-//   return -1;
-// }
-
 void main() {
-  final myList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  final find = 3;
-  print(binarySearch(myList, find));
-}
+  final myList = [5, 9, 24, 0, -1, 10];
+  final myMap = {
+    0: "zero",
+    1: "one",
+    2: "two",
+    3: "three",
+    4: "four",
+    5: "five",
+    6: "six",
+    7: "seven",
+    8: "eight",
+    9: "nine",
+  };
+  final tmp = [];
+  int sum = 0;
 
-int? binarySearch(List<int> list, int num) {
-  int low = 0;
-  int high = list.length - 1;
-  bool isTrue = low <= high;
-  while (isTrue) {
-    int mid = (low + high) ~/ 2;
-    int guess = list[mid];
-    if (guess == num) {
-      return mid;
-    } else if (guess > num) {
-      low = mid + 1;
-    } else {
-      high = mid - 1;
-    }
+  for (int i = 0; i < myList.length; i++) {
+    sum += myList[i];
   }
-  return -1;
+  print(sum);
+
+  print(myMap[6]);
+  for (int i = 0; i < myMap.length; i++) {
+    print("$i is spelled ${myMap[i]}");
+  }
+  print("+" * 100);
+  for (final key in myMap.keys) {
+    print("$key is spelled ${myMap[key]}");
+  }
+
+  void reverse(List<int> list) {
+    //base case
+    if (list.isNotEmpty) {
+      tmp.add(list[list.length]);
+    }
+    //recursive
+  }
 }
