@@ -1,17 +1,3 @@
-import 'dart:math';
-
-void main() {
-  final myList = [10, 80, 30, 40, 50, 70];
-  final count = 1000000;
-  final generatedList = List.generate(count, (a) => Random().nextInt(count));
-
-  final watch = Stopwatch();
-  watch.start;
-  quickSort(generatedList);
-  watch.stop();
-  print(watch.elapsedMilliseconds);
-}
-
 void quickSort(List<int> list) {
   _quickSort(list, 0, list.length - 1);
 }

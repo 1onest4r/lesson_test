@@ -1,30 +1,6 @@
-import 'dart:math';
-
 //it can get faster than the O(nlogn)
-
 //we start sorting from the LSD(least significant digit), (also MSD works too)
-void main() {
-  DateTime timeStamp = DateTime.now();
-  final myList = [170, 45, 75, 802, 24, 2, 66];
-  final sizeOfList = 1000000;
-  final generatedList = List.generate(
-    sizeOfList,
-    (a) => Random().nextInt(sizeOfList),
-  );
-
-  final stopWatch = Stopwatch();
-  stopWatch.start();
-  final sorted = radixSort(generatedList, "LSD");
-  stopWatch.stop();
-  DateTime test = DateTime.now();
-  print("=" * 70);
-  print(
-    "Size of the input: ${sizeOfList}\nElapsed time in milliseconds: ${stopWatch.elapsedMilliseconds}\nTime stamp before sorting: $timeStamp\nTime stamp after sorting: $test",
-  );
-  print("=" * 70);
-}
-
-List<int> radixSort(List<int> list, String BSD) {
+List<int> radixSort(List<int> list) {
   // DONE: if the list is only two long just finish it
   if (list.length <= 1) {
     return list;

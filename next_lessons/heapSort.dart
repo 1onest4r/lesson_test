@@ -1,11 +1,3 @@
-void main() {
-  final myList = [7, 2, 5, 1, 9, 4, 8, 3];
-  print(myList);
-
-  final sortedList = heapSort(myList);
-  print(sortedList);
-}
-
 List<int> heapSort(List<int> list) {
   final List<int> result = [];
 

@@ -1,24 +1,4 @@
-import 'dart:math';
-
-void main() {
-  // final myList = [7, 5, 3, 8, 9, 1, 2, 4];
-  // print(myList);
-  // final sorted = sort(myList);
-  // print(sorted);
-
-  final random = Random();
-  final myList = List.generate(1000000, (a) => random.nextInt(1000000));
-  print("Sorting list with size of ${myList.length}");
-
-  final stopWatch = Stopwatch();
-  stopWatch.start();
-  sort(myList);
-  stopWatch.stop();
-
-  print("Execution time: ${stopWatch.elapsedMilliseconds} ms");
-}
-
-List<int> sort(List<int> list) {
+List<int> mergeSort(List<int> list) {
   //base case
   if (list.length <= 1) {
     return list;
@@ -30,8 +10,8 @@ List<int> sort(List<int> list) {
   final rightList = list.sublist(middle);
 
   // conquer
-  final sortedLeft = sort(leftList);
-  final sortedRight = sort(rightList);
+  final sortedLeft = mergeSort(leftList);
+  final sortedRight = mergeSort(rightList);
 
   return eval(sortedRight, sortedLeft);
 }
