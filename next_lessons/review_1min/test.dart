@@ -1,39 +1,50 @@
-void main() {
-  final myList = [5, 9, 24, 0, -1, 10];
-  final myMap = {
-    0: "zero",
-    1: "one",
-    2: "two",
-    3: "three",
-    4: "four",
-    5: "five",
-    6: "six",
-    7: "seven",
-    8: "eight",
-    9: "nine",
-  };
-  final tmp = [];
-  int sum = 0;
+class Edge<T> {
+  final T destination;
+  final int weight;
+  Edge(this.destination, this.weight);
 
-  for (int i = 0; i < myList.length; i++) {
-    sum += myList[i];
+  @override
+  String toString() {
+    return "$destination, W: $weight";
   }
-  print(sum);
+}
 
-  print(myMap[6]);
-  for (int i = 0; i < myMap.length; i++) {
-    print("$i is spelled ${myMap[i]}");
-  }
-  print("+" * 100);
-  for (final key in myMap.keys) {
-    print("$key is spelled ${myMap[key]}");
+class Graph<T>{
+  final Map<T, List<Edge<T>>> _adjacencyList = {};
+  final bool directed;
+  Graph({this.directed = false});
+
+  void addVertex(T vertex) {
+    if (_adjacencyList.containsKey(vertex)) return;
+    _adjacencyList[vertex] = [];
   }
 
-  void reverse(List<int> list) {
-    //base case
-    if (list.isNotEmpty) {
-      tmp.add(list[list.length]);
+  void addEdge(T source, T destination, {int weight = 1}) {
+    addVertex(source);
+    addVertex(destination);
+
+    //add an edge between the source and destination
+    _adjacencyList[source]!.add(Edge(destination, weight));
+
+    //if this is an undirected graph, add edge from destination to source 
+    if (!directed) {
+      _adjacencyList[destination]!.add(Edge(destination, weight));
     }
-    //recursive
   }
+  @override
+  String toString() {
+    final result = StringBuffer();
+    _adjacencyList.forEach((vertex, edges) {
+      String connections = edges.map((e) => "${e.destination} (${e.weight})").join(", ");
+      result.write("$vertex: $connections");
+    });
+    return result.toString();
+  }
+}
+
+void main() {
+  final myGraph = Graph();
+  myGraph.addEdge("Alice", "Bob");
+  myGraph.addEdge("Alice", "Charlie");
+  myGraph.addEdge("Bob", "Diana");
 }
