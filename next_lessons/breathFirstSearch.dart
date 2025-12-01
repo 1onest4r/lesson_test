@@ -193,6 +193,7 @@ void main() {
   myGraph.addEdge("B", "E");
   myGraph.addEdge("B", "D");
   myGraph.addEdge("C", "E");
+  myGraph.addEdge("C", "F");
   myGraph.addEdge("C", "G");
   myGraph.addEdge("D", "G");
   myGraph.addEdge("E", "F");
