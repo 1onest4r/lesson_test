@@ -56,6 +56,7 @@ class Graph<T> {
       for (final neighbor in _adjacencyList[current]!) {
         if (!visited.contains(neighbor.destination)) {
           queue.enqueue(neighbor.destination);
+          visited.add(neighbor.destination);
         }
       }
     }
@@ -199,6 +200,8 @@ void main() {
   myGraph.addEdge("E", "F");
   myGraph.addEdge("F", "H");
   myGraph.addEdge("G", "H");
+
+  myGraph.breathFirstSearch("A");
 
   print(myGraph);
 }
