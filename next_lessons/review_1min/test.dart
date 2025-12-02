@@ -1,16 +1,26 @@
-void main() {
-  Map<String, dynamic> student1 = {"id": 21, "name": "Alice"};
-  Map<String, dynamic> student2 = {"id": 12, "name": "alice"};
-  Map<String, dynamic> student3 = {"id": 22, "name": "AlicE"};
-
-  List<Map<String, dynamic>> students = [student1, student2, student3];
-  for (var s in students) {
-    print("ID: ${s['id']}, NAME:${s['name']}");
+void lol(n) {
+  final range = n;
+  for (int i = 1; i <= range; i++) {
+    if ((i % 3 == 0) && (i % 5 == 0)) {
+      print("FIZZBUZZ");
+    } else if (i % 3 == 0) {
+      print("BUZZ");
+    } else if (i % 5 == 0) {
+      print("FIZZ");
+    } else {
+      print(i);
+    }
   }
+}
 
-  Set<int> set1 = {3, 6, 2, 5, 8};
-  Set<int> set2 = {1, 2, 5, 9, 4};
+int sum(int start, int end) {
+  int sum = 0;
+  int combo = start + end;
+  sum = combo * ((end - start + 1) ~/ 2);
+  return sum;
+}
 
-  Set<int> commonNum = set1.intersection(set2);
-  print(commonNum);
+void main() {
+  // lol(1000);
+  print(sum(1, 100));
 }
