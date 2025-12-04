@@ -44,8 +44,13 @@ class Graph<T> {
     addVertex(source);
     addVertex(destination);
 
+    bool exists = _adjacencyList[source]!.any((edge) => edge.destination == destination);
+    
+    if (!directed) {
+        _adjacencyList[destination]!.add(Edge(source, weight));
+    }
+
     // add an edge between source and destination
-    _adjacencyList[source]!.add(Edge(destination, weight));
 
     // if this is an undirected graph, add edge from destination to source
     if (!directed) {
@@ -238,7 +243,7 @@ class LinkedListQueue<T> {
 }
 
 void main() {
-  final myGraph = Graph();
+  final myGraph = Graph<String>();
   myGraph.addEdge("A", "B");
   myGraph.addEdge("A", "E");
   myGraph.addEdge("A", "C");
