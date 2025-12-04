@@ -1,2 +1,14 @@
+import 'dart:convert';
 
-//use a map to model a student, where the student has an ID and NAME. use a list to group two or three students.
+void main()  {
+    Map<String, int> myMap = {
+        "id": 20245,
+        "name": 0010,
+      };
+
+    String jsonString = jsonEncode(myMap);
+    print(jsonString);
+
+    Map<String, dynamic> newMap = jsonDecode(jsonString);
+    print(newMap);
+  }

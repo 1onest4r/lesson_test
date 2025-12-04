@@ -3,7 +3,7 @@ void pascalTriangle(int n) {
     String line = ' ' * (n - i);
     int val = 1;
     for (int j = 0; j <= i; j++) {
-      line += '$val ';
+   
       val = val * (i - j) ~/ (j + 1);
     }
     print(line);

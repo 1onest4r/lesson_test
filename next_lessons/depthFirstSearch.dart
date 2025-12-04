@@ -1,3 +1,23 @@
+class Stack<T> {
+  final List<T> _data = [];
+
+  bool get isEmpty => _data.isEmpty;
+
+  void push(T value) {
+    _data.add(value);
+  }
+
+  T? pop() {
+    if (isEmpty) return null;
+    return _data.removeLast();
+  }
+
+  @override
+  String toString() {
+    return _data.toString();
+  }
+}
+
 class Edge<T> {
   final T destination;
   final int weight;
@@ -24,8 +44,13 @@ class Graph<T> {
     addVertex(source);
     addVertex(destination);
 
+    bool exists = _adjacencyList[source]!.any((edge) => edge.destination == destination);
+    
+    if (!directed) {
+        _adjacencyList[destination]!.add(Edge(source, weight));
+    }
+
     // add an edge between source and destination
-    _adjacencyList[source]!.add(Edge(destination, weight));
 
     // if this is an undirected graph, add edge from destination to source
     if (!directed) {
@@ -57,6 +82,38 @@ class Graph<T> {
         if (!visited.contains(neighbor.destination)) {
           queue.enqueue(neighbor.destination);
           visited.add(neighbor.destination);
+        }
+      }
+    }
+  }
+
+  void depthFirstSearch(T startVertex) {
+    //make a stack
+    final stack = Stack<T>();
+    final visited = <T>{};
+
+    stack.push(startVertex);
+
+    //keep going as long as the stack is not empty
+    while (!stack.isEmpty) {
+      final current = stack.pop();
+      if (current == null) {
+        break;
+      }
+
+      //if current is visited
+      if (visited.contains(current)) continue;
+
+      //add current to visited
+      visited.add(current);
+      _processVertex(current);
+
+      //add all of the neighbors to the stack
+      final neighbors = _adjacencyList[current] ?? [];
+      for (final edge in neighbors) {
+        final neighbor = edge.destination;
+        if (!visited.contains(neighbor)) {
+          stack.push(neighbor);
         }
       }
     }
@@ -186,7 +243,7 @@ class LinkedListQueue<T> {
 }
 
 void main() {
-  final myGraph = Graph();
+  final myGraph = Graph<String>();
   myGraph.addEdge("A", "B");
   myGraph.addEdge("A", "E");
   myGraph.addEdge("A", "C");
@@ -201,7 +258,8 @@ void main() {
   myGraph.addEdge("F", "H");
   myGraph.addEdge("G", "H");
 
-  myGraph.breathFirstSearch("A");
+  // myGraph.breathFirstSearch("A");
+  myGraph.depthFirstSearch("A");
 
   print(myGraph);
 }
